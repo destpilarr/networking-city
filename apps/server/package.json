@@ -1,0 +1,29 @@
+{
+  "name": "@game-crypto/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "lint": "echo \"no lint configured\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@colyseus/redis-driver": "^0.17.0",
+    "@colyseus/redis-presence": "^0.17.0",
+    "@colyseus/schema": "^4.0.7",
+    "@colyseus/ws-transport": "^0.17.0",
+    "@game-crypto/database": "workspace:*",
+    "@game-crypto/shared": "workspace:*",
+    "colyseus": "^0.17.8",
+    "drizzle-orm": "^0.44.7",
+    "ioredis": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

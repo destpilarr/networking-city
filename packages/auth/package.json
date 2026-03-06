@@ -1,0 +1,21 @@
+{
+  "name": "@game-crypto/auth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "lint": "echo \"no lint configured\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@game-crypto/database": "workspace:*",
+    "better-auth": "^1.3.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10"
+  }
+}

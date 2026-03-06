@@ -1,0 +1,24 @@
+{
+  "name": "game-crypto",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.7.1",
+  "scripts": {
+    "dev": "docker compose up -d postgres redis && trap 'docker compose down' EXIT && turbo run dev --filter=@game-crypto/server --filter=@game-crypto/web --parallel",
+    "dev:no-docker": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:generate": "turbo run db:generate --filter=@game-crypto/database",
+    "db:migrate": "turbo run db:migrate --filter=@game-crypto/database",
+    "db:push": "turbo run db:push --filter=@game-crypto/database",
+    "db:studio": "turbo run db:studio --filter=@game-crypto/database",
+    "docker:dev": "docker compose up -d",
+    "docker:prod": "docker compose -f docker-compose.prod.yml up --build -d"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "typescript": "^5.8.2"
+  }
+}
